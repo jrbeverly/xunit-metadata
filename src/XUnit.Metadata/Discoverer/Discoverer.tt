@@ -1,0 +1,36 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core" #>
+<#@ Assembly Name="System.Windows.Forms" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #> 
+<#
+   string CategoryName = "Category";
+#>
+
+using System;
+using System.Collections.Generic;
+using Xunit.Abstractions;
+using Xunit.Sdk;
+
+namespace XUnit.Metadata.Common
+{
+    [TraitDiscoverer("XUnit.Metadata.Discoverer.BugDiscoverer", "XUnit.Metadata")]
+    public partial class BugAttribute : Attribute, ITraitAttribute
+    {
+    }
+}
+
+namespace XUnit.Metadata.Discoverer
+{
+    public sealed class BugDiscoverer : ITraitDiscoverer
+    {
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo traitAttribute)
+        {
+            yield return new KeyValuePair<string, string>("<#= CategoryName #>", "Bug");
+        }
+    }
+}
