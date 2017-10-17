@@ -5,8 +5,8 @@
 <#@ import namespace="System" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Collections" #> 
-<#@ import namespace="System.Collections.Generic" #> 
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 using System;
 using System.Collections.Generic;
@@ -40,11 +40,13 @@ namespace <#= category.Namespace.FullName #>
 
 namespace <#= assemblyName #>.Discoverer
 {
+	/// <inheritdoc/>
     /// <summary>
-    /// [PH]
+    /// Implements a 
     /// </summary>
     public sealed class <#= category.Name #>Discoverer : ITraitDiscoverer
     {
+		/// <inheritdoc/>
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("<#= Constants.Traits.Category #>", <#= attribute.Value #>);
@@ -73,12 +75,10 @@ namespace <#= assemblyName #>.Discoverer
 /// </summary>
 public static class Constants 
 {
-
 	public static class Traits 
 	{
 		public const string Category = "Category";
     }
-
 }
 
 /// <summary>
@@ -159,7 +159,8 @@ public IList<CodeProperty> GetProperties(CodeType type)
 /// <summary>
 /// Returns all <see cref="CodeType"/> objects for the provided <see cref="Project"/>.
 /// </summary>
-public IList<CodeType> GetTypes(IList<EnvDTE.ProjectItem> items) {
+public IList<CodeType> GetTypes(IList<EnvDTE.ProjectItem> items)
+{
 	List<CodeType> types = new List<CodeType>();	
     foreach(EnvDTE.ProjectItem item in items)
     {
@@ -181,15 +182,15 @@ public IList<CodeType> GetTypes(IList<EnvDTE.ProjectItem> items) {
 /// <summary>
 /// Returns all <see cref="ProjectItem"/> objects for the provided <see cref="Project"/>.
 /// </summary>
-  public IList<EnvDTE.ProjectItem> GetProject(EnvDTE.ProjectItems items)
-  {
-      var ret = new List<EnvDTE.ProjectItem>();
-      if (items == null) return ret;
-      foreach(EnvDTE.ProjectItem item in items)
-      {
-        ret.Add(item);
-        ret.AddRange(GetProject(item.ProjectItems));
-      }
-      return ret;
-  }
+public IList<EnvDTE.ProjectItem> GetProject(EnvDTE.ProjectItems items)
+{
+    var ret = new List<EnvDTE.ProjectItem>();
+    if (items == null) return ret;
+    foreach(EnvDTE.ProjectItem item in items)
+    {
+    ret.Add(item);
+    ret.AddRange(GetProject(item.ProjectItems));
+    }
+    return ret;
+}
 #>

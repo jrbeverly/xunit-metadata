@@ -2,13 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>xunit</PackageTags>
+    <NeutralLanguage>en-CA</NeutralLanguage>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyName>Xunit.Metadata</AssemblyName>
+    <RootNamespace>Xunit.Metadata</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.6\XUnit.Metadata.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.6\XUnit.Metadata.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.3.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
@@ -25,6 +37,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Discoverer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Schedueling\" />
   </ItemGroup>
 
 </Project>
