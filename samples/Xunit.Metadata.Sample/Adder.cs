@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Xunit.Metadata.Sample.Common
+namespace Xunit.Metadata.Sample
 {
     public sealed class Adder
     {

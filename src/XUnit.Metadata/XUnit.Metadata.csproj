@@ -39,7 +39,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Schedueling\" />
+    <Folder Include="Scheduling\" />
   </ItemGroup>
 
 </Project>

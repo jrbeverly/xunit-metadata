@@ -1,6 +1,5 @@
 using System;
-using Xunit.Metadata.Sample.Common;
-using XUnit.Metadata.Management;
+using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Bug
 {

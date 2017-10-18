@@ -1,6 +1,5 @@
 ﻿using System;
-using Xunit.Metadata.Sample.Common;
-using XUnit.Metadata.Management;
+using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Bug
 {
@@ -13,7 +12,7 @@ namespace Xunit.Metadata.Sample.Bug
 
         private readonly Adder _adder;
 
-        [Theory]
+        [Fact]
         [Bug("AR-102")]
         public void DivideByNegative()
         {

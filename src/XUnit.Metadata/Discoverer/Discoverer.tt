@@ -40,7 +40,7 @@ namespace <#= assemblyName #>.Discoverer
 {
     /// <inheritdoc />
     /// <summary>
-    /// Implements a
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="<#= category.Namespace.FullName #>.<#= category.Name #>"/> class.
     /// </summary>
     public sealed class <#= category.Name #>Discoverer : ITraitDiscoverer
     {

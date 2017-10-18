@@ -1,6 +1,5 @@
 using System;
-using Xunit.Metadata.Sample.Common;
-using XUnit.Metadata.Management;
+using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Bug
 {
@@ -21,7 +20,7 @@ namespace Xunit.Metadata.Sample.Bug
         [InlineData(0, -2, 2)]
         public void AddSet(int expected, int a, int b)
         {
-            Assert.Equal(4, _adder.Add(a, b));
+            Assert.Equal(expected, _adder.Add(a, b));
         }
 
         [Fact]

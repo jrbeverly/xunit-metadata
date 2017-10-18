@@ -1,8 +1,8 @@
 ﻿using System;
+using Xunit.Metadata.Common;
 using Xunit.Sdk;
-using XUnit.Metadata.Common;
 
-namespace XUnit.Metadata.Management
+namespace Xunit.Metadata.Management
 {
     /// <summary>
     /// A problem which impairs or prevents the functions of the product.
