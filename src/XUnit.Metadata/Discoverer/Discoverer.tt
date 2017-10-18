@@ -1,0 +1,190 @@
+﻿<#@ template debug="true" hostSpecific="true" language="C#" #>
+<#@ assembly name="EnvDTE" #>
+<#@ assembly Name="System.Core" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System.Collections.Generic;
+using Xunit.Abstractions;
+using Xunit.Sdk;
+
+<#
+	var visualStudio = ( this.Host as IServiceProvider )
+        .GetService( typeof( EnvDTE.DTE ) ) as EnvDTE.DTE;
+    var project = visualStudio.Solution
+        .FindProjectItem( this.Host.TemplateFile )
+        .ContainingProject as EnvDTE.Project;
+	
+	string assemblyName = GetAssemblyName(project);
+	var projectItems = GetProject(project.ProjectItems);
+	var types = GetTypes(projectItems);
+	var categories = types.Where(p => IsXunitCategory(p)).ToArray();
+
+	foreach(var category in categories) {
+		var attribute = GetXunitCategoryAttribute(category);
+		var properties = GetProperties(category);
+#>
+namespace <#= category.Namespace.FullName #>
+{
+    [TraitDiscoverer("<#= assemblyName #>.Discoverer.<#= category.Name #>Discoverer", "<#= assemblyName #>")]
+    public sealed partial class <#= category.Name #>
+    {
+    }
+}
+
+namespace <#= assemblyName #>.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="<#= category.Namespace.FullName #>.<#= category.Name #>"/> class.
+    /// </summary>
+    public sealed class <#= category.Name #>Discoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("<#= Constants.Traits.Category #>", <#= attribute.Value #>);
+<#foreach(CodeProperty property in properties) 
+{
+#>
+			var trait<#= property.Name #> = trait.GetNamedArgument<string>("<#= property.Name #>");
+			if (trait<#= property.Name #> != null) 
+				yield return new KeyValuePair<string, string>(<#= attribute.Value #>, trait<#= property.Name #>);
+<#
+}
+#>
+        }
+    }
+}
+<#
+	}
+#>
+<#+
+/// <summary>
+/// A collection of constants used in the code generation.
+/// </summary>
+public static class Constants 
+{
+	public static class Traits 
+	{
+		public const string Category = "Category";
+    }
+}
+
+/// <summary>
+/// Returns the 'AssemblyName' property from the <see cref="Project"/>.
+/// </summary>
+public string GetAssemblyName(Project project)
+{
+	return project.Properties.Item( "AssemblyName" ).Value.ToString();
+}
+
+/// <summary>
+/// Returns the <see cref="XunitCategoryAttribute"/> attribute for the provided <see cref="CodeType"/>.
+/// </summary>
+public CodeAttribute GetXunitCategoryAttribute(CodeType type)
+{
+	foreach(CodeAttribute attribute in type.Attributes.OfType<CodeAttribute>()) 
+	{
+		if (Equals(attribute.Name, "XunitCategory")) {
+			return attribute;
+        }
+    }
+	return null;
+}
+
+/// <summary>
+/// Determines if the provided <see cref="CodeType"/> contains the attribute <see cref="XunitCategoryAttribute"/>.
+/// </summary>
+public bool IsXunitCategory(CodeType type)
+{
+	if (type.Attributes == null) 
+	{
+		return false;
+    }
+
+	foreach(CodeAttribute attribute in type.Attributes.OfType<CodeAttribute>()) 
+	{
+		if (Equals(attribute.Name, "XunitCategory")) {
+			return true;
+        }
+    }
+
+	return false;
+}
+
+/// <summary>
+/// Determines if the provided <see cref="CodeType"/> contains the attribute <see cref="XunitPropertyAttribute"/>.
+/// </summary>
+public bool IsXunitProperty(CodeProperty property)
+{
+	if (property.Attributes == null) 
+	{
+		return false;
+    }
+
+	foreach(CodeAttribute attribute in property.Attributes.OfType<CodeAttribute>()) 
+	{
+		if (Equals(attribute.Name, "XunitProperty")) {
+			return true;
+        }
+    }
+
+	return false;
+}
+
+/// <summary>
+/// Returns all <see cref="CodeProperty"/> that have the attribute <see cref="XunitPropertyAttribute"/>.
+/// </summary>
+public IList<CodeProperty> GetProperties(CodeType type)
+{
+	if (type.Children == null) 
+	{
+		return new List<CodeProperty>();
+    }
+
+	return type.Children.OfType<CodeProperty>().ToList();
+}
+
+/// <summary>
+/// Returns all <see cref="CodeType"/> objects for the provided <see cref="Project"/>.
+/// </summary>
+public IList<CodeType> GetTypes(IList<EnvDTE.ProjectItem> items)
+{
+	List<CodeType> types = new List<CodeType>();	
+    foreach(EnvDTE.ProjectItem item in items)
+    {
+        if (item.FileCodeModel == null || item.FileCodeModel.CodeElements == null) {
+			continue;
+        }
+
+		foreach(var nameSpace in item.FileCodeModel.CodeElements.OfType<EnvDTE.CodeNamespace>()) 
+		{
+			foreach(var type in nameSpace.Members.OfType<EnvDTE.CodeType>()) 
+			{
+				types.Add(type);
+            }
+        }
+    }
+	return types;
+}
+
+/// <summary>
+/// Returns all <see cref="ProjectItem"/> objects for the provided <see cref="Project"/>.
+/// </summary>
+public IList<EnvDTE.ProjectItem> GetProject(EnvDTE.ProjectItems items)
+{
+    var ret = new List<EnvDTE.ProjectItem>();
+    if (items == null) return ret;
+    foreach(EnvDTE.ProjectItem item in items)
+    {
+    ret.Add(item);
+    ret.AddRange(GetProject(item.ProjectItems));
+    }
+    return ret;
+}
+#>
