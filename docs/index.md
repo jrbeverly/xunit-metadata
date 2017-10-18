@@ -22,7 +22,7 @@ Strongly-typed attributes for the management and organization of tests. As oppos
 
 ### Usage
 
-You can use the just as you would a [`TraitAttribute`](https://xunit.github.io/docs/comparisons.html) from xUnit V2.
+You can use the just as you would a [`TraitAttribute`](https://xunit.github.io/docs/comparisons.html) from xUnit v2.
 
 ```csharp
 [Fact]
