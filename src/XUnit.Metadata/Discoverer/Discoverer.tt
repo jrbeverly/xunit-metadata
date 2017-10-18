@@ -29,7 +29,6 @@ using Xunit.Sdk;
 		var attribute = GetXunitCategoryAttribute(category);
 		var properties = GetProperties(category);
 #>
-
 namespace <#= category.Namespace.FullName #>
 {
     [TraitDiscoverer("<#= assemblyName #>.Discoverer.<#= category.Name #>Discoverer", "<#= assemblyName #>")]
@@ -40,27 +39,24 @@ namespace <#= category.Namespace.FullName #>
 
 namespace <#= assemblyName #>.Discoverer
 {
-	/// <inheritdoc/>
+    /// <inheritdoc />
     /// <summary>
-    /// Implements a 
+    /// Implements a
     /// </summary>
     public sealed class <#= category.Name #>Discoverer : ITraitDiscoverer
     {
-		/// <inheritdoc/>
+		/// <inheritdoc />
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("<#= Constants.Traits.Category #>", <#= attribute.Value #>);
-<#
-			foreach(CodeProperty property in properties) 
-			{
+<#foreach(CodeProperty property in properties) 
+{
 #>
-			var trait_<#= property.Name #> = trait.GetNamedArgument<string>("<#= property.Name #>");
-			if (trait_<#= property.Name #> != null) 
-			{
-				yield return new KeyValuePair<string, string>(<#= attribute.Value #>, trait_<#= property.Name #>);
-			}
+			var trait<#= property.Name #> = trait.GetNamedArgument<string>("<#= property.Name #>");
+			if (trait<#= property.Name #> != null) 
+				yield return new KeyValuePair<string, string>(<#= attribute.Value #>, trait<#= property.Name #>);
 <#
-            }
+}
 #>
         }
     }
