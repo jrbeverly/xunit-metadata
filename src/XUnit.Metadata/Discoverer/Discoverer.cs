@@ -18,13 +18,13 @@ namespace Xunit.Metadata.Discoverer
     /// </summary>
     public sealed class BugAttributeDiscoverer : ITraitDiscoverer
     {
-		/// <inheritdoc />
+        /// <inheritdoc />
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Bug");
-			var traitReference = trait.GetNamedArgument<string>("Reference");
-			if (traitReference != null) 
-				yield return new KeyValuePair<string, string>("Bug", traitReference);
+            var traitReference = trait.GetNamedArgument<string>("Reference");
+            if (traitReference != null)
+                yield return new KeyValuePair<string, string>("Bug", traitReference);
         }
     }
 }

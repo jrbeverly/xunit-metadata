@@ -1,5 +1,4 @@
-﻿using Xunit;
-using XUnit.Metadata.Management;
+﻿using XUnit.Metadata.Management;
 
 namespace XUnit.Metadata.Test
 {
