@@ -7,6 +7,9 @@ namespace Xunit.Metadata.Management
     /// <summary>
     /// A problem which impairs or prevents the functions of the product.
     /// </summary>
+    /// <remarks>
+    /// Allows the referencing of a bug in an issue tracking system.
+    /// </remarks>
     [XunitCategory("Bug")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class BugAttribute : Attribute, ITraitAttribute
