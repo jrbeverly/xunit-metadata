@@ -287,3 +287,6 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+
+# Docs
+docs/**/images/
