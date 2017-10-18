@@ -1,6 +1,6 @@
 # 
 <h1 align="center">
-    <img alt="Xunit.Metadata" src="https://gitlab.com/jrbeverly/Xunit.Metadata/raw/docs/icon/icon.png" width="200px" height="200px" />
+    <img alt="Xunit.Metadata" src="icon/icon.png" width="200px" height="200px" />
     <br /> Xunit.Metadata
 </h1>
 
