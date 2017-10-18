@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
 namespace XUnit.Metadata.Management
 {
     [TraitDiscoverer("Xunit.Metadata.Discoverer.BugAttributeDiscoverer", "Xunit.Metadata")]
-    public sealed partial class BugAttribute : Attribute, ITraitAttribute
+    public sealed partial class BugAttribute
     {
     }
 }
@@ -29,4 +28,3 @@ namespace Xunit.Metadata.Discoverer
         }
     }
 }
-
