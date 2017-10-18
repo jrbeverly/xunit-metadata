@@ -1,0 +1,19 @@
+{
+    "name": "Xunit.Metadata",
+    "description": "Strongly-typed attributes for the management and organization of tests.",
+    "icon": {
+        "url": "https://gitlab.com/jrbeverly/Xunit.Metadata/raw/docs/icon/icon.png"
+    },
+    "pipeline": {
+        "url": "https://gitlab.com/jrbeverly/Xunit.Metadata/commits/master",
+        "badge": "https://gitlab.com/jrbeverly/Xunit.Metadata/badges/master/pipeline.svg"
+    },
+    "repository": {
+        "url": "https://gitlab.com/jrbeverly/Xunit.Metadata",
+        "badge": "https://img.shields.io/badge/gitlab-Xunit.Metadata-red.svg"
+    },
+    "license": {
+        "url": "LICENSE",
+        "badge": "https://img.shields.io/badge/license-MIT-blue.svg"
+    }
+}
