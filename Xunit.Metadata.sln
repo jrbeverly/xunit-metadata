@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit.Metadata", "src\Xunit.Metadata\XUnit.Metadata.csproj", "{09FD72CE-0F40-4B06-9282-0CB02D8C0743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Metadata", "src\Xunit.Metadata\Xunit.Metadata.csproj", "{09FD72CE-0F40-4B06-9282-0CB02D8C0743}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Metadata.Tests", "tests\Xunit.Metadata.Tests\Xunit.Metadata.Tests.csproj", "{A2F25F90-5A01-4C8D-A557-2FF61F38AACE}"
 EndProject
