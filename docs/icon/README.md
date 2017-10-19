@@ -1,4 +1,4 @@
-![Project icon](icon.png)
+![Project icon](./icon/icon.png)
 # Flask
 By [Ana Paula Tello](https://thenounproject.com/gacela), from the [Noun Project](https://thenounproject.com/term/flask/31697/)
 
