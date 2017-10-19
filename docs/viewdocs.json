@@ -1,5 +1,5 @@
 {
     "redirects": {
-        "icon/README/icon/icon.png": "docs/icon/icon.png"
+        "docs/icon/README/icon.png": "docs/icon/icon.png"
     }
 }
