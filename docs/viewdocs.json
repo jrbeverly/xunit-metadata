@@ -1,0 +1,5 @@
+{
+    "redirects": {
+        "icon/README/icon/icon.png": "docs/icon/icon.png"
+    }
+}
