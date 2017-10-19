@@ -1,0 +1,90 @@
+image: microsoft/dotnet:latest
+
+# ---------------------------------------
+# Global
+# ---------------------------------------
+
+stages:
+  - "Build"
+  - "Tests"
+  - "Package"
+  - "Deploy"
+
+variables:
+  CI: "true"
+
+# ----------------------------------------
+# Prescript
+# ----------------------------------------
+
+# ----------------------------------------
+# Build
+# ----------------------------------------
+
+build:
+  stage: "Build"
+  script:
+    - bash build/build.sh
+  only:
+    - web
+    - develop
+    - master
+
+# ----------------------------------------
+# Tests
+# ----------------------------------------
+
+unit-test:
+  stage: "Tests"
+  script:
+    - bash build/test.sh
+  dependencies:
+    - build
+  only:
+    - web
+    - develop
+    - master
+
+integration-test:
+  stage: "Tests"  
+  script:
+    - bash build/test.sh
+  dependencies:
+    - build
+  only:
+    - web
+    - develop
+    - master
+
+# ----------------------------------------
+# Package
+# ----------------------------------------
+
+deploy:
+  stage: "Package"
+  script:
+    - bash build/package.sh
+  artifacts:
+    expire_in: 4 weeks
+    paths:
+      - artifacts/*.nupkg
+  only:
+    - web
+    - develop
+    - master
+
+# ----------------------------------------
+# Deploy
+# ----------------------------------------
+
+deploy:
+  stage: "Deploy"
+  script:
+    - bash build/deploy.sh
+  artifacts:
+    expire_in: 4 weeks
+    paths:
+      - artifacts/*.nupkg
+  only:
+    - web
+    - master
