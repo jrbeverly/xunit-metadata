@@ -1,45 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>Xunit</PackageTags>
-    <NeutralLanguage>en-CA</NeutralLanguage>
-    <SignAssembly>false</SignAssembly>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Xunit.Metadata</AssemblyName>
     <RootNamespace>Xunit.Metadata</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.2.0" />
+  </ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Xunit" Version="2.3.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Discoverer\Discoverer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Discoverer.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
   <ItemGroup>
     <None Update="Discoverer\Discoverer.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Discoverer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="Scheduling\" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Discoverer\Discoverer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Discoverer.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
