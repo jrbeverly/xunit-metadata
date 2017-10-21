@@ -6,9 +6,10 @@ command -v dotnet >/dev/null 2>&1 || { echo >&2 "The script requires 'dotnet' bu
 #
 DIR=$(dirname "$(readlink -f "$0")")
 DIR_ROOT=$(dirname "$DIR")
-DIR_SRC="$DIR_ROOT/src"
+DIR_SLN="$DIR_ROOT/sln"
 
 #
 # Main
 #
-dotnet restore "$DIR_ROOT/Xunit.Metadata.sln"
+dotnet restore "$DIR_SLN/Xunit.Metadata.sln"
+dotnet build "$DIR_SLN/Xunit.Metadata.sln"
