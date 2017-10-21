@@ -52,7 +52,7 @@ namespace <#= assemblyName #>.Discoverer
 {
 #>
 			var trait<#= property.Name #> = trait.GetNamedArgument<string>("<#= property.Name #>");
-			if (trait<#= property.Name #> != null) 
+			if (!string.IsNullOrEmpty(trait<#= property.Name #>)) 
 				yield return new KeyValuePair<string, string>(<#= attribute.Value #>, trait<#= property.Name #>);
 <#
 }
@@ -147,7 +147,7 @@ public IList<CodeProperty> GetProperties(CodeType type)
 		return new List<CodeProperty>();
     }
 
-	return type.Children.OfType<CodeProperty>().ToList();
+	return type.Children.OfType<CodeProperty>().Where(IsXunitProperty).ToList();
 }
 
 /// <summary>
@@ -182,8 +182,8 @@ public IList<EnvDTE.ProjectItem> GetProject(EnvDTE.ProjectItems items)
     if (items == null) return ret;
     foreach(EnvDTE.ProjectItem item in items)
     {
-    ret.Add(item);
-    ret.AddRange(GetProject(item.ProjectItems));
+		ret.Add(item);
+		ret.AddRange(GetProject(item.ProjectItems));
     }
     return ret;
 }

@@ -2,7 +2,6 @@
 
 namespace Xunit.Metadata.Common
 {
-    /// <inheritdoc />
     /// <summary>
     /// Represents the category property for the <see cref="T:Xunit.Metadata.Common.XunitCategoryAttribute" />.
     /// </summary>
