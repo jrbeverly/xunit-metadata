@@ -158,6 +158,75 @@ namespace Xunit.Metadata.Discoverer
         }
     }
 }
+namespace Xunit.Metadata.Scheduling
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.MonthlyAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class MonthlyAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Scheduling.MonthlyAttribute"/> class.
+    /// </summary>
+    public sealed class MonthlyAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Monthly");
+        }
+    }
+}
+namespace Xunit.Metadata.Scheduling
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.NightlyAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class NightlyAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Scheduling.NightlyAttribute"/> class.
+    /// </summary>
+    public sealed class NightlyAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Nightly");
+        }
+    }
+}
+namespace Xunit.Metadata.Scheduling
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.WeeklyAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class WeeklyAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Scheduling.WeeklyAttribute"/> class.
+    /// </summary>
+    public sealed class WeeklyAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Weekly");
+        }
+    }
+}
 namespace Xunit.Metadata
 {
     [TraitDiscoverer("Xunit.Metadata.Discoverer.AcceptanceAttributeDiscoverer", "Xunit.Metadata")]
