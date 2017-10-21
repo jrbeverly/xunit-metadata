@@ -52,7 +52,7 @@ namespace <#= assemblyName #>.Discoverer
 {
 #>
 			var trait<#= property.Name #> = trait.GetNamedArgument<string>("<#= property.Name #>");
-			if (trait<#= property.Name #> != null) 
+			if (!String.IsNullOrEmpty(trait<#= property.Name #>)) 
 				yield return new KeyValuePair<string, string>(<#= attribute.Value #>, trait<#= property.Name #>);
 <#
 }

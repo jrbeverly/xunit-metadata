@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Metadata", "src\Xunit.Metadata\Xunit.Metadata.csproj", "{09FD72CE-0F40-4B06-9282-0CB02D8C0743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Metadata", "..\src\Xunit.Metadata\Xunit.Metadata.csproj", "{09FD72CE-0F40-4B06-9282-0CB02D8C0743}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Metadata.Tests", "tests\Xunit.Metadata.Tests\Xunit.Metadata.Tests.csproj", "{A2F25F90-5A01-4C8D-A557-2FF61F38AACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Metadata.Tests", "..\tests\Xunit.Metadata.Tests\Xunit.Metadata.Tests.csproj", "{A2F25F90-5A01-4C8D-A557-2FF61F38AACE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D993620F-1B8A-4EF9-9C03-3429C074AEC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{B99FE408-D71C-4852-90DD-A1C247971CD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xunit.Metadata.Sample", "samples\Xunit.Metadata.Sample\Xunit.Metadata.Sample.csproj", "{38D48523-0A13-4C80-967A-ECB8797D9569}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xunit.Metadata.Sample", "..\samples\Xunit.Metadata.Sample\Xunit.Metadata.Sample.csproj", "{38D48523-0A13-4C80-967A-ECB8797D9569}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

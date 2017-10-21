@@ -9,7 +9,6 @@ namespace Xunit.Metadata.Common
     [AttributeUsage(AttributeTargets.Class)]
     internal sealed class XunitCategoryAttribute : Attribute
     {
-        /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Xunit.Metadata.Common.XunitCategoryAttribute" /> class flagging the attribute for code
         /// generation.
@@ -19,14 +18,8 @@ namespace Xunit.Metadata.Common
         /// The T4 Template that generated all the boilerplate code for the trait discoverers requires that the provided
         /// argument is a string literal, not a constant.
         /// </remarks>
-        public XunitCategoryAttribute(string name)
+        public XunitCategoryAttribute(String name)
         {
-            Name = name;
         }
-
-        /// <summary>
-        /// The name of the category.
-        /// </summary>
-        public string Name { get; }
     }
 }

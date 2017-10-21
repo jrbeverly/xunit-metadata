@@ -5,16 +5,16 @@ using Xunit.Sdk;
 namespace Xunit.Metadata.Management
 {
     /// <summary>
-    /// A problem which impairs or prevents the functions of the product.
+    /// User stories are short, simple descriptions of a feature told from the perspective of the person.
     /// </summary>
-    [XunitCategory("Bug")]
+    [XunitCategory("Story")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public sealed partial class BugAttribute : Attribute, ITraitAttribute
+    public sealed partial class StoryAttribute : Attribute, ITraitAttribute
     {
         /// <summary>
         /// Associates with the test with the Story category.
         /// </summary>
-        public BugAttribute()
+        public StoryAttribute()
         {
             Namespace = null;
             Id = null;
@@ -24,7 +24,7 @@ namespace Xunit.Metadata.Management
         /// Associates with the test the specified string.
         /// </summary>
         /// <param name="name">The namespace of the user story.</param>
-        public BugAttribute(string name)
+        public StoryAttribute(string name)
         {
             Namespace = name;
             Id = null;
@@ -35,7 +35,7 @@ namespace Xunit.Metadata.Management
         /// </summary>
         /// <param name="name">The namespace of the user story.</param>
         /// <param name="id">The user story identifier.</param>
-        public BugAttribute(string name, int id)
+        public StoryAttribute(string name, int id)
         {
             Namespace = name;
             Id = id.ToString();
