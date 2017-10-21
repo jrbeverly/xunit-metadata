@@ -13,7 +13,7 @@ namespace Xunit.Metadata.Sample.Usability
         private readonly Adder _adder;
 
         [Theory]
-        [Bug("OnMethod")]
+        [Usability]
         [InlineData(3, 1, 2)]
         public void Theory_SingleInline(int expected, int a, int b)
         {
@@ -22,7 +22,7 @@ namespace Xunit.Metadata.Sample.Usability
 
 
         [Theory]
-        [Bug("OnMethod")]
+        [Usability]
         [InlineData(3, 1, 2)]
         [InlineData(4, 2, 2)]
         [InlineData(0, 2, -2)]
@@ -32,8 +32,35 @@ namespace Xunit.Metadata.Sample.Usability
         }
 
         [Fact]
-        [Bug("OnMethod")]
+        [Usability]
         public void Fact_Single()
+        {
+            var value = 10;
+            Assert.Throws<ArgumentException>(() => _adder.Divide(value, 0));
+        }
+
+        [Theory]
+        [Usability("OnMethod")]
+        [InlineData(3, 1, 2)]
+        public void TheoryWithArg_SingleInline(int expected, int a, int b)
+        {
+            Assert.Equal(expected, _adder.Add(a, b));
+        }
+
+
+        [Theory]
+        [Usability("OnMethod")]
+        [InlineData(3, 1, 2)]
+        [InlineData(4, 2, 2)]
+        [InlineData(0, 2, -2)]
+        public void TheoryWithArg_MultipleInline(int expected, int a, int b)
+        {
+            Assert.Equal(expected, _adder.Add(a, b));
+        }
+
+        [Fact]
+        [Usability("OnMethod")]
+        public void FactWithArg_Single()
         {
             var value = 10;
             Assert.Throws<ArgumentException>(() => _adder.Divide(value, 0));

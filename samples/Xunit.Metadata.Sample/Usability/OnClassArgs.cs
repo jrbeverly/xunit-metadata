@@ -3,7 +3,7 @@ using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Usability
 {
-    [Bug("OnClass")]
+    [Usability("OnClass")]
     public sealed class OnClassArgs
     {
         public OnClassArgs()

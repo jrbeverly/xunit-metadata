@@ -12,7 +12,7 @@ namespace Xunit.Metadata.Management
     public sealed partial class IssueAttribute : Attribute, ITraitAttribute
     {
         /// <summary>
-        /// Associates with the test with the Story category.
+        /// Associates the test with the Issue category.
         /// </summary>
         public IssueAttribute()
         {
@@ -21,9 +21,9 @@ namespace Xunit.Metadata.Management
         }
 
         /// <summary>
-        /// Associates with the test the specified string.
+        /// Associates the test with the specified string.
         /// </summary>
-        /// <param name="name">The namespace of the user story.</param>
+        /// <param name="name">A string identifier.</param>
         public IssueAttribute(string name)
         {
             Namespace = name;
@@ -31,23 +31,23 @@ namespace Xunit.Metadata.Management
         }
 
         /// <summary>
-        /// Associates with the test the specified name and id pair.
+        /// Associates with the test the specified namespace and id.
         /// </summary>
-        /// <param name="name">The namespace of the user story.</param>
-        /// <param name="id">The user story identifier.</param>
+        /// <param name="name">The namespace of the category.</param>
+        /// <param name="id">A numeric identifier.</param>
         public IssueAttribute(string name, int id)
         {
             Namespace = name;
             Id = id.ToString();
         }
-
+        
         /// <summary>
-        /// The namespace of the user story.
+        /// The namespace of the attribute.
         /// </summary>
         public string Namespace { get; }
 
         /// <summary>
-        /// The user story identifier.
+        /// The numeric identifier.
         /// </summary>
         public string Id { get; }
 

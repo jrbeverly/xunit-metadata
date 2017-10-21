@@ -11,6 +11,7 @@ namespace Xunit.Metadata.Sample.Acceptance
         }
 
         private readonly Adder _adder;
+
         [Theory]
         [Acceptance]
         [InlineData(3, 1, 2)]

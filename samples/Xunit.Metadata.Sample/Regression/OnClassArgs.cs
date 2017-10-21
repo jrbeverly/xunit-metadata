@@ -3,7 +3,7 @@ using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Regression
 {
-    [Bug("OnClass")]
+    [Regression("OnClass")]
     public sealed class OnClassArgs
     {
         public OnClassArgs()

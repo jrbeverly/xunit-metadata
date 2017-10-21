@@ -3,7 +3,7 @@ using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Stress
 {
-    [Bug]
+    [Stress]
     public sealed class OnClass
     {
         public OnClass()

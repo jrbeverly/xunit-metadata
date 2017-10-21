@@ -1,7 +1,7 @@
 using System;
 using Xunit.Metadata.Management;
 
-namespace Xunit.Metadata.Sample.Smoke
+namespace Xunit.Metadata.Sample.Issue
 {
     public class OnMethod
     {
@@ -13,7 +13,7 @@ namespace Xunit.Metadata.Sample.Smoke
         private readonly Adder _adder;
 
         [Theory]
-        [Smoke]
+        [Issue]
         [InlineData(3, 1, 2)]
         public void Theory_SingleInline(int expected, int a, int b)
         {
@@ -22,7 +22,7 @@ namespace Xunit.Metadata.Sample.Smoke
 
 
         [Theory]
-        [Smoke]
+        [Issue]
         [InlineData(3, 1, 2)]
         [InlineData(4, 2, 2)]
         [InlineData(0, 2, -2)]
@@ -32,7 +32,7 @@ namespace Xunit.Metadata.Sample.Smoke
         }
 
         [Fact]
-        [Smoke]
+        [Issue]
         public void Fact_Single()
         {
             var value = 10;
@@ -40,7 +40,7 @@ namespace Xunit.Metadata.Sample.Smoke
         }
 
         [Theory]
-        [Smoke("OnMethod")]
+        [Issue("OnMethod")]
         [InlineData(3, 1, 2)]
         public void TheoryWithArg_SingleInline(int expected, int a, int b)
         {
@@ -49,7 +49,7 @@ namespace Xunit.Metadata.Sample.Smoke
 
 
         [Theory]
-        [Smoke("OnMethod")]
+        [Issue("OnMethod")]
         [InlineData(3, 1, 2)]
         [InlineData(4, 2, 2)]
         [InlineData(0, 2, -2)]
@@ -59,7 +59,7 @@ namespace Xunit.Metadata.Sample.Smoke
         }
 
         [Fact]
-        [Smoke("OnMethod")]
+        [Issue("OnMethod")]
         public void FactWithArg_Single()
         {
             var value = 10;

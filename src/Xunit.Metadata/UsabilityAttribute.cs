@@ -15,7 +15,7 @@ namespace Xunit.Metadata
         /// Associates with the test the specified bug.
         /// </summary>
         /// <param name="reference">A reference to a bug.</param>
-        public UsabilityAttribute(string reference)
+        public UsabilityAttribute(string reference = null)
         {
             Reference = reference;
         }

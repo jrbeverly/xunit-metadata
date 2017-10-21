@@ -1,9 +1,9 @@
 ﻿using System;
 using Xunit.Metadata.Management;
 
-namespace Xunit.Metadata.Sample.System
+namespace Xunit.Metadata.Sample.Issue
 {
-    [System("OnClass")]
+    [Issue("OnClass", 100)]
     public sealed class OnClassArgs
     {
         public OnClassArgs()

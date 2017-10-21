@@ -1,9 +1,9 @@
 ﻿using System;
 using Xunit.Metadata.Management;
 
-namespace Xunit.Metadata.Sample.System
+namespace Xunit.Metadata.Sample.Epic
 {
-    [System("OnClass")]
+    [Epic("OnClass", 100)]
     public sealed class OnClassArgs
     {
         public OnClassArgs()

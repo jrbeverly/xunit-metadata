@@ -3,7 +3,7 @@ using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Integration
 {
-    [Bug]
+    [Integration]
     public sealed class OnClass
     {
         public OnClass()

@@ -3,7 +3,7 @@ using Xunit.Metadata.Management;
 
 namespace Xunit.Metadata.Sample.Smoke
 {
-    [Bug("OnClass")]
+    [Smoke("OnClass")]
     public sealed class OnClassArgs
     {
         public OnClassArgs()
