@@ -392,29 +392,3 @@ namespace Xunit.Metadata.Discoverer
         }
     }
 }
-namespace Xunit.Metadata
-{
-    [TraitDiscoverer("Xunit.Metadata.Discoverer.UsabilityAttributeDiscoverer", "Xunit.Metadata")]
-    public sealed partial class UsabilityAttribute
-    {
-    }
-}
-
-namespace Xunit.Metadata.Discoverer
-{
-    /// <inheritdoc />
-    /// <summary>
-    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.UsabilityAttribute"/> class.
-    /// </summary>
-    public sealed class UsabilityAttributeDiscoverer : ITraitDiscoverer
-    {
-		/// <inheritdoc />
-        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
-        {
-            yield return new KeyValuePair<string, string>("Category", "Usability");
-			var traitReference = trait.GetNamedArgument<string>("Reference");
-			if (!string.IsNullOrEmpty(traitReference)) 
-				yield return new KeyValuePair<string, string>("Usability", traitReference);
-        }
-    }
-}

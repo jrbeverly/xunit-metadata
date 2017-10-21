@@ -5,23 +5,23 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <summary>
-    /// 
+    /// Verifies that the system meets performance requirements.
     /// </summary>
     [XunitCategory("Performance")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class PerformanceAttribute : Attribute, ITraitAttribute
     {
         /// <summary>
-        /// Associates with the test the specified bug.
+        /// Associates the test with the identifier.
         /// </summary>
-        /// <param name="reference">A reference to a bug.</param>
+        /// <param name="reference">A reference identifier.</param>
         public PerformanceAttribute(string reference = null)
         {
             Reference = reference;
         }
 
         /// <summary>
-        /// The reference to the bug.
+        /// A reference identifier.
         /// </summary>
         [XunitProperty]
         public string Reference { get; }
