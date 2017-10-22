@@ -4,9 +4,9 @@ DIR_REPO=$(dirname "$(dirname "$(readlink -f "$0")")")
 set -ev
 
 dotnet restore \
-    "$DIR_REPO/sln/Xunit.Metadata.sln"
+    "$DIR_REPO/sln/Build.sln"
 
 dotnet build \
     --configuration Release \
     --verbosity minimal \
-    "$DIR_REPO/sln/Xunit.Metadata.sln"
+    "$DIR_REPO/sln/Build.sln"

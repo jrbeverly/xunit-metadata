@@ -8,4 +8,4 @@ set -ev
 dotnet nuget push \
     "$DIR_REPO/artifacts/"*.nupkg \    
     ${NugetAPIKey} \
-    -Source "${NugetSource}" \
+    -Source "${NugetSource}"

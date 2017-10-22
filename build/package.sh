@@ -8,4 +8,4 @@ dotnet pack \
     --configuration Release \
     --output "${DIR_REPO}/artifacts" \
     --verbosity minimal \
-    "${DIR_REPO}/src/Xunit.Metadata/Xunit.Metadata.csproj" 
+    "${DIR_REPO}/src/"**/*.csproj
