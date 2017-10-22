@@ -24,7 +24,7 @@ variables:
 build:
   stage: "Build"
   script:
-    - bash build/build.sh
+    - sh build/build.sh
   only:
     - web
     - develop
@@ -34,10 +34,10 @@ build:
 # Tests
 # ----------------------------------------
 
-unit-test:
+unit tests:
   stage: "Tests"
   script:
-    - bash build/test.sh
+    - sh build/test.sh
   dependencies:
     - build
   only:
@@ -45,10 +45,10 @@ unit-test:
     - develop
     - master
 
-integration-test:
+integration tests:
   stage: "Tests"  
   script:
-    - bash build/test.sh
+    - sh build/test.sh
   dependencies:
     - build
   only:
@@ -60,10 +60,10 @@ integration-test:
 # Package
 # ----------------------------------------
 
-deploy:
+package:
   stage: "Package"
   script:
-    - bash build/package.sh
+    - sh build/package.sh
   artifacts:
     expire_in: 4 weeks
     paths:
@@ -80,11 +80,8 @@ deploy:
 deploy:
   stage: "Deploy"
   script:
-    - bash build/deploy.sh
-  artifacts:
-    expire_in: 4 weeks
-    paths:
-      - artifacts/*.nupkg
+    - sh build/deploy.sh
+  dependencies:
+    - package
   only:
-    - web
-    - master
+    - tags
