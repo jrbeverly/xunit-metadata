@@ -1,4 +1,3 @@
-# 
 <h1 align="center">
     <img alt="Xunit.Metadata" src="icon/icon.png" width="200px" height="200px" />
     <br /> Xunit.Metadata
