@@ -63,4 +63,4 @@ public sealed class AdderTests
 
 ## Acknowledgements
 
-The project icon is by [Ana Paula Tello from the Noun Project](pages/README.md).
+The project icon is by [Ana Paula Tello from the Noun Project](pages/icon.md).
