@@ -4,7 +4,6 @@ DIR_REPO=$(dirname "$(dirname "$(readlink -f "$0")")")
 set -ev
 
 dotnet pack \
-    --no-build \
     --configuration Release \
     --output "${DIR_REPO}/artifacts" \
     --verbosity minimal \

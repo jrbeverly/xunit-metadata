@@ -21,11 +21,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
+    <DocumentationFile>..\..\artifacts\Xunit.Metadata.xml</DocumentationFile>
+    <OutputPath>..\..\artifacts\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
+    <DocumentationFile>..\..\artifacts\Xunit.Metadata.xml</DocumentationFile>
+    <OutputPath>..\..\artifacts\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

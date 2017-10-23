@@ -25,6 +25,10 @@ build:
   stage: "Build"
   script:
     - sh build/build.sh
+  artifacts:
+    expire_in: 60 minutes
+    paths:
+      - artifacts/
   only:
     - web
     - develop
@@ -64,6 +68,8 @@ package:
   stage: "Package"
   script:
     - sh build/package.sh
+  dependencies:
+    - build
   artifacts:
     expire_in: 4 weeks
     paths:
