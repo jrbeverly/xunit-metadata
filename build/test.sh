@@ -6,5 +6,6 @@ set -ev
 dotnet test \
     --list-tests \
     --verbosity minimal \
+    --configuration Release \
     --results-directory "${DIR_REPO}/artifacts" \
     "${DIR_REPO}/tests/"**/*.csproj

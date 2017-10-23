@@ -1,16 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Xunit.Metadata</AssemblyName>
     <RootNamespace>Xunit.Metadata</RootNamespace>
+    <Version>0.0.1</Version>
+    <Authors>jrbeverly</Authors>
+    <Company>jrbeverly</Company>
+    <Description>Strongly-typed attributes for the management and organization of tests.</Description>
+    <Copyright>Copyright © jrbeverly 2017</Copyright>
+    <PackageLicenseUrl>https://gitlab.com/jrbeverly/Xunit.Metadata/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://gitlab.com/jrbeverly/Xunit.Metadata</PackageProjectUrl>
+    <PackageIconUrl>https://gitlab.com/jrbeverly/Xunit.Metadata/raw/master/docs/icon/icon.png</PackageIconUrl>
+    <RepositoryUrl>https://gitlab.com/jrbeverly/Xunit.Metadata</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>xunit traits organization categories</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <NeutralLanguage>en-CA</NeutralLanguage>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Scheduling - Copy\**" />
-    <EmbeddedResource Remove="Scheduling - Copy\**" />
-    <None Remove="Scheduling - Copy\**" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.2.0" />

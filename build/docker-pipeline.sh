@@ -6,4 +6,4 @@ set -ev
 docker run --rm \
     -v "$DIR_REPO":/media \
     --workdir /media \
-    microsoft/dotnet:latest sh build/build.sh
+    microsoft/dotnet:latest sh build/pipeline.sh
