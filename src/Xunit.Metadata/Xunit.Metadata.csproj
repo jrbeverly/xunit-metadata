@@ -7,6 +7,8 @@
     <Version>0.0.1</Version>
     <Authors>jrbeverly</Authors>
     <Company>jrbeverly</Company>
+    <title>Xunit.Metadata</title>
+    <Summary>Strongly-typed attributes for the management and organization of tests.</Summary>
     <Description>Strongly-typed attributes for the management and organization of tests.</Description>
     <Copyright>Copyright © jrbeverly 2017</Copyright>
     <PackageLicenseUrl>https://gitlab.com/jrbeverly/Xunit.Metadata/blob/master/LICENSE</PackageLicenseUrl>
@@ -14,19 +16,19 @@
     <PackageIconUrl>https://gitlab.com/jrbeverly/Xunit.Metadata/raw/master/docs/icon/icon.png</PackageIconUrl>
     <RepositoryUrl>https://gitlab.com/jrbeverly/Xunit.Metadata</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>xunit traits organization categories</PackageTags>
+    <PackageTags>xunit traits test-organization category metadata</PackageTags>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <NeutralLanguage>en-CA</NeutralLanguage>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>..\..\artifacts\Xunit.Metadata.xml</DocumentationFile>
+    <DocumentationFile>..\..\artifacts\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
     <OutputPath>..\..\artifacts\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>..\..\artifacts\Xunit.Metadata.xml</DocumentationFile>
+    <DocumentationFile>..\..\artifacts\netstandard1.6\Xunit.Metadata.xml</DocumentationFile>
     <OutputPath>..\..\artifacts\</OutputPath>
   </PropertyGroup>
 

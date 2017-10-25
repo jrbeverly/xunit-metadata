@@ -4,8 +4,6 @@ DIR_REPO=$(dirname "$(dirname "$(readlink -f "$0")")")
 set -ev
 
 dotnet test \
-    --no-build \
-    --list-tests \
     --verbosity minimal \
     --configuration Release \
     --results-directory "${DIR_REPO}/artifacts" \

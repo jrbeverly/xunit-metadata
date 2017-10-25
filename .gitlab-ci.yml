@@ -49,17 +49,6 @@ unit tests:
     - develop
     - master
 
-integration tests:
-  stage: "Tests"  
-  script:
-    - sh build/test.sh
-  dependencies:
-    - build
-  only:
-    - web
-    - develop
-    - master
-
 # ----------------------------------------
 # Package
 # ----------------------------------------
