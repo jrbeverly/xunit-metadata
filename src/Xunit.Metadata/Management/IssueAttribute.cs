@@ -1,29 +1,22 @@
 ﻿using System;
-using Xunit.Metadata.Common;
 using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata.Management
 {
-    /// <summary>
-    /// A generic issue type, as defined by your organization.
-    /// </summary>
+    /// <summary>A generic issue type, as defined by your organization.</summary>
     [XunitCategory("Issue")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class IssueAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>
-        /// Associates the test with the Issue category.
-        /// </summary>
+        /// <summary>Associates the test with the Issue category.</summary>
         public IssueAttribute()
         {
             Namespace = null;
             Id = null;
         }
 
-        /// <summary>
-        /// Associates the test with the specified string.
-        /// </summary>
+        /// <summary>Associates the test with the specified string.</summary>
         /// <param name="name">A string identifier.</param>
         public IssueAttribute(string name)
         {
@@ -31,9 +24,7 @@ namespace Xunit.Metadata.Management
             Id = null;
         }
 
-        /// <summary>
-        /// Associates with the test the specified namespace and id.
-        /// </summary>
+        /// <summary>Associates with the test the specified namespace and id.</summary>
         /// <param name="name">The namespace of the category.</param>
         /// <param name="id">A numeric identifier.</param>
         public IssueAttribute(string name, int id)
@@ -41,20 +32,14 @@ namespace Xunit.Metadata.Management
             Namespace = name;
             Id = id.ToString();
         }
-        
-        /// <summary>
-        /// The namespace of the attribute.
-        /// </summary>
+
+        /// <summary>The namespace of the attribute.</summary>
         public string Namespace { get; }
 
-        /// <summary>
-        /// The numeric identifier.
-        /// </summary>
+        /// <summary>The numeric identifier.</summary>
         public string Id { get; }
 
-        /// <summary>
-        /// A reference identifier.
-        /// </summary>
+        /// <summary>A reference identifier.</summary>
         [XunitProperty]
         public string Reference
         {
