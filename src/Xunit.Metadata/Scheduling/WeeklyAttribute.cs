@@ -4,9 +4,10 @@ using Xunit.Sdk;
 
 namespace Xunit.Metadata.Scheduling
 {
-    /// <summary>Tests that will run in the nightly builds.</summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>Tests scheduled to run on the weekly build.</summary>
     [XunitCategory("Weekly")]
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public sealed partial class WeeklyAttribute : Attribute, ITraitAttribute
     {
     }

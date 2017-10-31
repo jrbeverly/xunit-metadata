@@ -4,6 +4,7 @@ using Xunit.Sdk;
 
 namespace Xunit.Metadata
 {
+    /// <inheritdoc cref="Xunit.Sdk.ITraitAttribute" />
     /// <summary></summary>
     [XunitCategory("Unit")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
