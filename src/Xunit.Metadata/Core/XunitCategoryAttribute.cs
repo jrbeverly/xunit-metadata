@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace Xunit.Metadata.Common
+namespace Xunit.Metadata.Core
 {
     /// <inheritdoc />
     /// <summary>
@@ -10,7 +10,7 @@ namespace Xunit.Metadata.Common
     internal sealed class XunitCategoryAttribute : Attribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Xunit.Metadata.Common.XunitCategoryAttribute" /> class flagging the attribute for code
+        /// Initializes a new instance of the <see cref="T:Xunit.Metadata.Core.XunitCategoryAttribute" /> class flagging the attribute for code
         /// generation.
         /// </summary>
         /// <param name="name">The name as a string literal.</param>

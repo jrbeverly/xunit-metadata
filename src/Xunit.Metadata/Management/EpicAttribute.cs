@@ -1,5 +1,6 @@
 ﻿using System;
 using Xunit.Metadata.Common;
+using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata.Management

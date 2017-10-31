@@ -2,6 +2,110 @@
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
+namespace Xunit.Metadata.Common
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.DatabaseAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class DatabaseAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Common.DatabaseAttribute"/> class.
+    /// </summary>
+    public sealed class DatabaseAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Security");
+			var traitReference = trait.GetNamedArgument<string>("Reference");
+			if (!string.IsNullOrEmpty(traitReference)) 
+				yield return new KeyValuePair<string, string>("Security", traitReference);
+        }
+    }
+}
+namespace Xunit.Metadata.Common
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.ExternalDependencyAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class ExternalDependencyAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Common.ExternalDependencyAttribute"/> class.
+    /// </summary>
+    public sealed class ExternalDependencyAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "External Dependency");
+			var traitReference = trait.GetNamedArgument<string>("Reference");
+			if (!string.IsNullOrEmpty(traitReference)) 
+				yield return new KeyValuePair<string, string>("External Dependency", traitReference);
+        }
+    }
+}
+namespace Xunit.Metadata.Common
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.OnlineAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class OnlineAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Common.OnlineAttribute"/> class.
+    /// </summary>
+    public sealed class OnlineAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Online");
+			var traitReference = trait.GetNamedArgument<string>("Reference");
+			if (!string.IsNullOrEmpty(traitReference)) 
+				yield return new KeyValuePair<string, string>("Online", traitReference);
+        }
+    }
+}
+namespace Xunit.Metadata.Common
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.SecurityAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class SecurityAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.Common.SecurityAttribute"/> class.
+    /// </summary>
+    public sealed class SecurityAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Security");
+			var traitReference = trait.GetNamedArgument<string>("Reference");
+			if (!string.IsNullOrEmpty(traitReference)) 
+				yield return new KeyValuePair<string, string>("Security", traitReference);
+        }
+    }
+}
 namespace Xunit.Metadata.Management
 {
     [TraitDiscoverer("Xunit.Metadata.Discoverer.BugAttributeDiscoverer", "Xunit.Metadata")]
@@ -380,6 +484,32 @@ namespace Xunit.Metadata.Discoverer
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Smoke", traitReference);
+        }
+    }
+}
+namespace Xunit.Metadata
+{
+    [TraitDiscoverer("Xunit.Metadata.Discoverer.SoakAttributeDiscoverer", "Xunit.Metadata")]
+    public sealed partial class SoakAttribute
+    {
+    }
+}
+
+namespace Xunit.Metadata.Discoverer
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.SoakAttribute"/> class.
+    /// </summary>
+    public sealed class SoakAttributeDiscoverer : ITraitDiscoverer
+    {
+		/// <inheritdoc />
+        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
+        {
+            yield return new KeyValuePair<string, string>("Category", "Soak");
+			var traitReference = trait.GetNamedArgument<string>("Reference");
+			if (!string.IsNullOrEmpty(traitReference)) 
+				yield return new KeyValuePair<string, string>("Soak", traitReference);
         }
     }
 }

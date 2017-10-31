@@ -1,22 +1,21 @@
-﻿using System;
-using Xunit.Metadata.Common;
+using System;
 using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
-namespace Xunit.Metadata
+namespace Xunit.Metadata.Common
 {
     /// <summary>
-    /// Verifies that essential defects do not exist.
+    /// Verifies if system meets the product requirements.
     /// </summary>
-    [XunitCategory("Smoke")]
+    [XunitCategory("External Dependency")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public sealed partial class SmokeAttribute : Attribute, ITraitAttribute
+    public sealed partial class ExternalDependencyAttribute : Attribute, ITraitAttribute
     {
         /// <summary>
         /// Associates the test with the identifier.
         /// </summary>
         /// <param name="reference">A reference identifier.</param>
-        public SmokeAttribute(string reference = null)
+        public ExternalDependencyAttribute(string reference = null)
         {
             Reference = reference;
         }

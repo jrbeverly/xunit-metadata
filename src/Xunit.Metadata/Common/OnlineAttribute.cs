@@ -1,22 +1,21 @@
 ﻿using System;
-using Xunit.Metadata.Common;
 using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
-namespace Xunit.Metadata
+namespace Xunit.Metadata.Common
 {
     /// <summary>
-    /// Verifies that essential defects do not exist.
+    /// A category that marks tests that require an internet connection.
     /// </summary>
-    [XunitCategory("Smoke")]
+    [XunitCategory("Online")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public sealed partial class SmokeAttribute : Attribute, ITraitAttribute
+    public sealed partial class OnlineAttribute : Attribute, ITraitAttribute
     {
         /// <summary>
         /// Associates the test with the identifier.
         /// </summary>
         /// <param name="reference">A reference identifier.</param>
-        public SmokeAttribute(string reference = null)
+        public OnlineAttribute(string reference = null)
         {
             Reference = reference;
         }
