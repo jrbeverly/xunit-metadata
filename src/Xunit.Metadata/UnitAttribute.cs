@@ -18,7 +18,7 @@ namespace Xunit.Metadata
         }
 
         /// <summary>A reference identifier.</summary>
-        [XunitProperty]
+        [XunitCategoryProperty]
         public string Reference { get; }
     }
 }

@@ -152,6 +152,9 @@ namespace Xunit.Metadata.Discoverer
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Bug");
+			var traitKey = trait.GetNamedArgument<string>("Key");
+			if (!string.IsNullOrEmpty(traitKey)) 
+				yield return new KeyValuePair<string, string>("Bug", traitKey);
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Bug", traitReference);
@@ -178,6 +181,9 @@ namespace Xunit.Metadata.Discoverer
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Epic");
+			var traitKey = trait.GetNamedArgument<string>("Key");
+			if (!string.IsNullOrEmpty(traitKey)) 
+				yield return new KeyValuePair<string, string>("Epic", traitKey);
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Epic", traitReference);
@@ -204,6 +210,9 @@ namespace Xunit.Metadata.Discoverer
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Feature");
+			var traitKey = trait.GetNamedArgument<string>("Key");
+			if (!string.IsNullOrEmpty(traitKey)) 
+				yield return new KeyValuePair<string, string>("Feature", traitKey);
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Feature", traitReference);
@@ -230,6 +239,9 @@ namespace Xunit.Metadata.Discoverer
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Improvement");
+			var traitKey = trait.GetNamedArgument<string>("Key");
+			if (!string.IsNullOrEmpty(traitKey)) 
+				yield return new KeyValuePair<string, string>("Improvement", traitKey);
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Improvement", traitReference);
@@ -256,6 +268,9 @@ namespace Xunit.Metadata.Discoverer
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Issue");
+			var traitKey = trait.GetNamedArgument<string>("Key");
+			if (!string.IsNullOrEmpty(traitKey)) 
+				yield return new KeyValuePair<string, string>("Issue", traitKey);
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Issue", traitReference);
@@ -282,6 +297,9 @@ namespace Xunit.Metadata.Discoverer
         public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
         {
             yield return new KeyValuePair<string, string>("Category", "Story");
+			var traitKey = trait.GetNamedArgument<string>("Key");
+			if (!string.IsNullOrEmpty(traitKey)) 
+				yield return new KeyValuePair<string, string>("Story", traitKey);
 			var traitReference = trait.GetNamedArgument<string>("Reference");
 			if (!string.IsNullOrEmpty(traitReference)) 
 				yield return new KeyValuePair<string, string>("Story", traitReference);
