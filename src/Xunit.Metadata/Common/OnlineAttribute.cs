@@ -4,12 +4,14 @@ using Xunit.Sdk;
 
 namespace Xunit.Metadata.Common
 {
-    /// <summary>A category that marks tests that require an internet connection.</summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>An internet connection is a required for the test.</summary>
     [XunitCategory("Online")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class OnlineAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>Associates the test with the identifier.</summary>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Online category.</summary>
         /// <param name="reference">A reference identifier.</param>
         public OnlineAttribute(string reference = null)
         {

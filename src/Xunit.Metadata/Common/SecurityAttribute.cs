@@ -4,12 +4,14 @@ using Xunit.Sdk;
 
 namespace Xunit.Metadata.Common
 {
-    /// <summary>Verifies if system meets the product requirements.</summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>Ensures that security concerns are addressed.</summary>
     [XunitCategory("Security")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SecurityAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>Associates the test with the identifier.</summary>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Security category.</summary>
         /// <param name="reference">A reference identifier.</param>
         public SecurityAttribute(string reference = null)
         {
