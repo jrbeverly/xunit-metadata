@@ -11,7 +11,7 @@ namespace Xunit.Metadata
     public sealed partial class SoakAttribute : Attribute, ITraitAttribute
     {
         /// <inheritdoc />
-        /// <summary>Associates the test with the identifier.</summary>
+        /// <summary>Associates the test with the Soak category and optional reference.</summary>
         /// <param name="reference">A reference identifier.</param>
         public SoakAttribute(string reference = null)
         {

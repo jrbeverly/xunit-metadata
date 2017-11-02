@@ -11,7 +11,7 @@ namespace Xunit.Metadata
     public sealed partial class BenchmarkAttribute : Attribute, ITraitAttribute
     {
         /// <inheritdoc />
-        /// <summary>Associates the test with the identifier.</summary>
+        /// <summary>Associates the test with the Benchmark category and optional reference.</summary>
         /// <param name="reference">A reference identifier.</param>
         public BenchmarkAttribute(string reference = null)
         {

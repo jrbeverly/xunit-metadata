@@ -11,7 +11,7 @@ namespace Xunit.Metadata
     public sealed partial class DisasterRecoveryAttribute : Attribute, ITraitAttribute
     {
         /// <inheritdoc />
-        /// <summary>Associates the test with the identifier.</summary>
+        /// <summary>Associates the test with the Recovery category and optional reference.</summary>
         /// <param name="reference">A reference identifier.</param>
         public DisasterRecoveryAttribute(string reference = null)
         {
