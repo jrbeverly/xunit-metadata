@@ -4,11 +4,13 @@ using Xunit.Sdk;
 
 namespace Xunit.Metadata
 {
+    /// <inheritdoc cref="ITraitAttribute" />
     /// <summary>A category that marks tests that require an internet connection.</summary>
     [XunitCategory("Recovery")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class DisasterRecoveryAttribute : Attribute, ITraitAttribute
     {
+        /// <inheritdoc />
         /// <summary>Associates the test with the identifier.</summary>
         /// <param name="reference">A reference identifier.</param>
         public DisasterRecoveryAttribute(string reference = null)

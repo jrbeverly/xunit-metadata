@@ -4,11 +4,13 @@ using Xunit.Sdk;
 
 namespace Xunit.Metadata
 {
+    /// <inheritdoc cref="ITraitAttribute" />
     /// <summary>System is tested based on environments.</summary>
     [XunitCategory("System")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SystemAttribute : Attribute, ITraitAttribute
     {
+        /// <inheritdoc />
         /// <summary>Associates the test with the identifier.</summary>
         /// <param name="reference">A reference identifier.</param>
         public SystemAttribute(string reference = null)
