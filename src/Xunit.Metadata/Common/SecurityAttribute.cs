@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Ensures that security concerns are addressed.</summary>
+    /// <summary>Evaluate the software in the presence of a malicious attack.</summary>
     [XunitCategory("Security")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SecurityAttribute : Attribute, ITraitAttribute

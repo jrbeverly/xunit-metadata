@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>An internet connection is a required for the test.</summary>
+    /// <summary>An internet connection is required for the test.</summary>
     [XunitCategory("Online")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class OnlineAttribute : Attribute, ITraitAttribute

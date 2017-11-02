@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Access to the file system is a required for the test.</summary>
+    /// <summary>Access to the file system is required for the test.</summary>
     [XunitCategory("FileSystem")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class FileSystemAttribute : Attribute, ITraitAttribute

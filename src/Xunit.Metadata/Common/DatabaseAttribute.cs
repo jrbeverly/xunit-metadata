@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>A database connection is a required for the test.</summary>
+    /// <summary>A database connection is required for the test.</summary>
     [XunitCategory("Database")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class DatabaseAttribute : Attribute, ITraitAttribute

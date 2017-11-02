@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Access to an external dependency is a required for the test.</summary>
+    /// <summary>Access to an external dependency is required for the test.</summary>
     [XunitCategory("External Dependency")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class ExternalDependencyAttribute : Attribute, ITraitAttribute
