@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>System is tested based on environments.</summary>
+    /// <summary>Process of verifying the underlying components of a system.</summary>
     [XunitCategory("System")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SystemAttribute : Attribute, ITraitAttribute

@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>A category that marks tests that require an internet connection.</summary>
+    /// <summary>System is run over an extended period of time to verify execution under a continuous expected load. </summary>
     [XunitCategory("Soak")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SoakAttribute : Attribute, ITraitAttribute

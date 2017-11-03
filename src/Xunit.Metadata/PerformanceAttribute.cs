@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies that the system meets performance requirements.</summary>
+    /// <summary>System is assessed in terms of responsiveness and stability under various workloads.</summary>
     [XunitCategory("Performance")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class PerformanceAttribute : Attribute, ITraitAttribute

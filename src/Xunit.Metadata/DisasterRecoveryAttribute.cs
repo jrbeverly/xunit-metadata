@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>A category that marks tests that require an internet connection.</summary>
+    /// <summary>Verifies the success of restoration procedures.</summary>
     [XunitCategory("Recovery")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class DisasterRecoveryAttribute : Attribute, ITraitAttribute

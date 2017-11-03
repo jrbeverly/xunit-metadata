@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies if system meets the product requirements.</summary>
+    /// <summary>Validates a system's ability to continue operation while moving operations.</summary>
     [XunitCategory("Failover")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class FailoverAttribute : Attribute, ITraitAttribute

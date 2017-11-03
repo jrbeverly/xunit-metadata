@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies that essential defects do not exist.</summary>
+    /// <summary>Initial testing to check whether the software is stable.</summary>
     [XunitCategory("Smoke")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SmokeAttribute : Attribute, ITraitAttribute

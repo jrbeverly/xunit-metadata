@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Determines if the outputs meets the specification requirements.</summary>
+    /// <summary>System is tested against the functional requirements/specifications.</summary>
     [XunitCategory("Functional")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class FunctionalAttribute : Attribute, ITraitAttribute

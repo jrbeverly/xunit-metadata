@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Testing of integration modules.</summary>
+    /// <summary>A group of components are combined to produce a result.</summary>
     [XunitCategory("Integration")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class IntegrationAttribute : Attribute, ITraitAttribute

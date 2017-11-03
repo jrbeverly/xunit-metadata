@@ -611,32 +611,6 @@ namespace Xunit.Metadata.Discoverer
 }
 namespace Xunit.Metadata
 {
-    [TraitDiscoverer("Xunit.Metadata.Discoverer.SanityAttributeDiscoverer", "Xunit.Metadata")]
-    public sealed partial class SanityAttribute
-    {
-    }
-}
-
-namespace Xunit.Metadata.Discoverer
-{
-    /// <inheritdoc />
-    /// <summary>
-    /// An implementation of <see cref="ITraitDiscoverer"/> for the <see cref="Xunit.Metadata.SanityAttribute"/> class.
-    /// </summary>
-    public sealed class SanityAttributeDiscoverer : ITraitDiscoverer
-    {
-		/// <inheritdoc />
-        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo trait)
-        {
-            yield return new KeyValuePair<string, string>("Category", "Sanity");
-			var traitReference = trait.GetNamedArgument<string>("Reference");
-			if (!string.IsNullOrEmpty(traitReference)) 
-				yield return new KeyValuePair<string, string>("Sanity", traitReference);
-        }
-    }
-}
-namespace Xunit.Metadata
-{
     [TraitDiscoverer("Xunit.Metadata.Discoverer.SmokeAttributeDiscoverer", "Xunit.Metadata")]
     public sealed partial class SmokeAttribute
     {

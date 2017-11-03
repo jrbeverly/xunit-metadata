@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies if system meets the product requirements.</summary>
+    /// <summary>System experiences a bursts of activity with varying degrees of load.</summary>
     [XunitCategory("Spike")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SpikeAttribute : Attribute, ITraitAttribute

@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies if system meets the product requirements.</summary>
+    /// <summary>System is run for an extended period of time to verify stability.</summary>
     [XunitCategory("Reliability")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class ReliabilityAttribute : Attribute, ITraitAttribute

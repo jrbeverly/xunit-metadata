@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>System is stressed beyond its specifications to check how and when it fails.</summary>
+    /// <summary>System is stressed beyond its specifications to determine the upper limit.</summary>
     [XunitCategory("Stress")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class StressAttribute : Attribute, ITraitAttribute

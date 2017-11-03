@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary></summary>
+    /// <summary>An individual unit or group of related units.</summary>
     [XunitCategory("Unit")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class UnitAttribute : Attribute, ITraitAttribute

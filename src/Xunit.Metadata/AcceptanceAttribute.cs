@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies if system meets the product requirements.</summary>
+    /// <summary>A formal description of the behavior of a software product.</summary>
     [XunitCategory("Acceptance")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class AcceptanceAttribute : Attribute, ITraitAttribute

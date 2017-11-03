@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary></summary>
+    /// <summary>Verify system components that have typically been proven stable.</summary>
     [XunitCategory("Regression")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class RegressionAttribute : Attribute, ITraitAttribute

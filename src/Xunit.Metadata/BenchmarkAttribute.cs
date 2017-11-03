@@ -5,7 +5,7 @@ using Xunit.Sdk;
 namespace Xunit.Metadata
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>Verifies if system meets the product requirements.</summary>
+    /// <summary>Load testing a component to determine the performance characteristics of the application.</summary>
     [XunitCategory("Benchmark")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class BenchmarkAttribute : Attribute, ITraitAttribute
