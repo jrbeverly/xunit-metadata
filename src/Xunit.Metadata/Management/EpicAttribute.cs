@@ -1,65 +1,56 @@
 ﻿using System;
-using Xunit.Metadata.Common;
+using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata.Management
 {
-    /// <summary>
-    /// An epic is a large body of work that can be broken down into a number of smaller stories.
-    /// </summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>An epic is a large body of work that can be broken down into a number of smaller stories.</summary>
     [XunitCategory("Epic")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class EpicAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>
-        /// Associates the test with the Epic category.
-        /// </summary>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Epic category.</summary>
         public EpicAttribute()
         {
-            Namespace = null;
+            Key = null;
             Id = null;
         }
 
-        /// <summary>
-        /// Associates the test with the specified string.
-        /// </summary>
-        /// <param name="name">A string identifier.</param>
-        public EpicAttribute(string name)
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Epic category and namespace.</summary>
+        /// <param name="key">The issue namespace.</param>
+        public EpicAttribute(string key)
         {
-            Namespace = name;
+            Key = key ?? throw new ArgumentNullException(nameof(key));
             Id = null;
         }
 
-        /// <summary>
-        /// Associates with the test the specified namespace and id.
-        /// </summary>
-        /// <param name="name">The namespace of the category.</param>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Epic category for the specified namespace and issue id.</summary>
+        /// <param name="key">The issue namespace.</param>
         /// <param name="id">A numeric identifier.</param>
-        public EpicAttribute(string name, int id)
+        public EpicAttribute(string key, int id)
         {
-            Namespace = name;
-            Id = id.ToString();
+            Key = key ?? throw new ArgumentNullException(nameof(key));
+            Id = Convert.ToString(id);
         }
 
-        /// <summary>
-        /// The namespace of the attribute.
-        /// </summary>
-        public string Namespace { get; }
+        /// <summary>The issue namespace.</summary>
+        [XunitCategoryProperty]
+        public string Key { get; }
 
-        /// <summary>
-        /// The numeric identifier.
-        /// </summary>
+        /// <summary>The numeric identifier of the issue.</summary>
         public string Id { get; }
 
-        /// <summary>
-        /// A reference identifier.
-        /// </summary>
-        [XunitProperty]
+        /// <summary>A reference identifier.</summary>
+        [XunitCategoryProperty]
         public string Reference
         {
             get
             {
-                var value = string.Join(" ", Namespace, Id).Trim();
+                var value = string.Join(" ", Key, Id).Trim();
                 return value == string.Empty ? null : value;
             }
         }

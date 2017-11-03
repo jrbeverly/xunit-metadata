@@ -15,4 +15,9 @@
     <ProjectReference Include="..\..\src\Xunit.Metadata\Xunit.Metadata.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Scheduling\" />
+  </ItemGroup>
+
 </Project>

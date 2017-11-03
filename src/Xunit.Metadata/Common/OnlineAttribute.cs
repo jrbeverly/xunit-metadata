@@ -2,18 +2,18 @@
 using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
-namespace Xunit.Metadata
+namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>System is stressed beyond its specifications to determine the upper limit.</summary>
-    [XunitCategory("Stress")]
+    /// <summary>An internet connection is required for the test.</summary>
+    [XunitCategory("Online")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public sealed partial class StressAttribute : Attribute, ITraitAttribute
+    public sealed partial class OnlineAttribute : Attribute, ITraitAttribute
     {
         /// <inheritdoc />
-        /// <summary>Associates the test with the Stress category and optional reference.</summary>
+        /// <summary>Associates the test with the Online category.</summary>
         /// <param name="reference">A reference identifier.</param>
-        public StressAttribute(string reference = null)
+        public OnlineAttribute(string reference = null)
         {
             Reference = reference;
         }

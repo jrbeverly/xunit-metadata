@@ -2,18 +2,18 @@
 using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
-namespace Xunit.Metadata
+namespace Xunit.Metadata.Common
 {
     /// <inheritdoc cref="ITraitAttribute" />
-    /// <summary>System is stressed beyond its specifications to determine the upper limit.</summary>
-    [XunitCategory("Stress")]
+    /// <summary>Evaluate the software in the presence of a malicious attack.</summary>
+    [XunitCategory("Security")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public sealed partial class StressAttribute : Attribute, ITraitAttribute
+    public sealed partial class SecurityAttribute : Attribute, ITraitAttribute
     {
         /// <inheritdoc />
-        /// <summary>Associates the test with the Stress category and optional reference.</summary>
+        /// <summary>Associates the test with the Security category.</summary>
         /// <param name="reference">A reference identifier.</param>
-        public StressAttribute(string reference = null)
+        public SecurityAttribute(string reference = null)
         {
             Reference = reference;
         }
