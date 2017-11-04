@@ -79,4 +79,4 @@ deploy:
   dependencies:
     - package
   only:
-    - tags
+    - master
