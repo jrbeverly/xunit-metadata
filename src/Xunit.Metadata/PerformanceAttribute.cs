@@ -1,29 +1,25 @@
 ﻿using System;
-using Xunit.Metadata.Common;
+using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata
 {
-    /// <summary>
-    /// Verifies that the system meets performance requirements.
-    /// </summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>System is assessed in terms of responsiveness and stability under various workloads.</summary>
     [XunitCategory("Performance")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class PerformanceAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>
-        /// Associates the test with the identifier.
-        /// </summary>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Performance category and optional reference.</summary>
         /// <param name="reference">A reference identifier.</param>
         public PerformanceAttribute(string reference = null)
         {
             Reference = reference;
         }
 
-        /// <summary>
-        /// A reference identifier.
-        /// </summary>
-        [XunitProperty]
+        /// <summary>A reference identifier.</summary>
+        [XunitCategoryProperty]
         public string Reference { get; }
     }
 }

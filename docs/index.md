@@ -1,4 +1,3 @@
-# 
 <h1 align="center">
     <img alt="Xunit.Metadata" src="icon/icon.png" width="200px" height="200px" />
     <br /> Xunit.Metadata
@@ -63,4 +62,4 @@ public sealed class AdderTests
 
 ## Acknowledgements
 
-The project icon is by [Ana Paula Tello from the Noun Project](pages/README.md).
+The project icon is by [Ana Paula Tello from the Noun Project](pages/icon.md).

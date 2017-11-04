@@ -1,14 +1,13 @@
 ﻿using System;
-using Xunit.Metadata.Common;
+using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata.Scheduling
 {
-    /// <summary>
-    /// Tests that will run in the nightly builds.
-    /// </summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>Tests scheduled to run on the nightly build.</summary>
     [XunitCategory("Nightly")]
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public sealed partial class NightlyAttribute : Attribute, ITraitAttribute
     {
     }

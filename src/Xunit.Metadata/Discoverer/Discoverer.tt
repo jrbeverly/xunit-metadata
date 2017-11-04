@@ -129,7 +129,7 @@ public bool IsXunitProperty(CodeProperty property)
 
 	foreach(CodeAttribute attribute in property.Attributes.OfType<CodeAttribute>()) 
 	{
-		if (Equals(attribute.Name, "XunitProperty")) {
+		if (Equals(attribute.Name, "XunitCategoryProperty")) {
 			return true;
         }
     }

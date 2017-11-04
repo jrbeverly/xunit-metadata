@@ -1,29 +1,25 @@
 ﻿using System;
-using Xunit.Metadata.Common;
+using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata
 {
-    /// <summary>
-    /// Verifies that essential defects do not exist.
-    /// </summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>Initial testing to check whether the software is stable.</summary>
     [XunitCategory("Smoke")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class SmokeAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>
-        /// Associates the test with the identifier.
-        /// </summary>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Smoke category and optional reference.</summary>
         /// <param name="reference">A reference identifier.</param>
         public SmokeAttribute(string reference = null)
         {
             Reference = reference;
         }
 
-        /// <summary>
-        /// A reference identifier.
-        /// </summary>
-        [XunitProperty]
+        /// <summary>A reference identifier.</summary>
+        [XunitCategoryProperty]
         public string Reference { get; }
     }
 }

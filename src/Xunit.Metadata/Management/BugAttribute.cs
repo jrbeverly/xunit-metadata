@@ -1,65 +1,56 @@
 ﻿using System;
-using Xunit.Metadata.Common;
+using Xunit.Metadata.Core;
 using Xunit.Sdk;
 
 namespace Xunit.Metadata.Management
 {
-    /// <summary>
-    /// A problem which impairs or prevents the functions of the product.
-    /// </summary>
+    /// <inheritdoc cref="ITraitAttribute" />
+    /// <summary>A problem which impairs or prevents the functions of the product.</summary>
     [XunitCategory("Bug")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public sealed partial class BugAttribute : Attribute, ITraitAttribute
     {
-        /// <summary>
-        /// Associates the test with the Bug category.
-        /// </summary>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Bug category.</summary>
         public BugAttribute()
         {
-            Namespace = null;
+            Key = null;
             Id = null;
         }
 
-        /// <summary>
-        /// Associates the test with the specified string.
-        /// </summary>
-        /// <param name="name">A string identifier.</param>
-        public BugAttribute(string name)
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Bug category and namespace.</summary>
+        /// <param name="key">The issue namespace.</param>
+        public BugAttribute(string key)
         {
-            Namespace = name;
+            Key = key ?? throw new ArgumentNullException(nameof(key));
             Id = null;
         }
 
-        /// <summary>
-        /// Associates with the test the specified namespace and id.
-        /// </summary>
-        /// <param name="name">The namespace of the category.</param>
+        /// <inheritdoc />
+        /// <summary>Associates the test with the Bug category for the specified namespace and issue id.</summary>
+        /// <param name="key">The issue namespace.</param>
         /// <param name="id">A numeric identifier.</param>
-        public BugAttribute(string name, int id)
+        public BugAttribute(string key, int id)
         {
-            Namespace = name;
-            Id = id.ToString();
+            Key = key ?? throw new ArgumentNullException(nameof(key));
+            Id = Convert.ToString(id);
         }
 
-        /// <summary>
-        /// The namespace of the attribute.
-        /// </summary>
-        public string Namespace { get; }
+        /// <summary>The issue namespace.</summary>
+        [XunitCategoryProperty]
+        public string Key { get; }
 
-        /// <summary>
-        /// The numeric identifier.
-        /// </summary>
+        /// <summary>The numeric identifier of the issue.</summary>
         public string Id { get; }
 
-        /// <summary>
-        /// A reference identifier.
-        /// </summary>
-        [XunitProperty]
+        /// <summary>A reference identifier.</summary>
+        [XunitCategoryProperty]
         public string Reference
         {
             get
             {
-                var value = string.Join(" ", Namespace, Id).Trim();
+                var value = string.Join(" ", Key, Id).Trim();
                 return value == string.Empty ? null : value;
             }
         }
