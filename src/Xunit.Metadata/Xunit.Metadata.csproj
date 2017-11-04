@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Xunit.Metadata</AssemblyName>
     <RootNamespace>Xunit.Metadata</RootNamespace>
-    <Version>0.0.1</Version>
+    <Version>0.5.1</Version>
     <Authors>jrbeverly</Authors>
     <Company>jrbeverly</Company>
     <title>Xunit.Metadata</title>

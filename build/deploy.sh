@@ -6,6 +6,6 @@ DIR_REPO=$(dirname "$(dirname "$(readlink -f "$0")")")
 set -ev
 
 dotnet nuget push \
-    "$DIR_REPO/artifacts/"*.nupkg \    
-    ${NugetAPIKey} \
-    -Source "${NugetSource}"
+    --source "${NugetSource}" \
+    --api-key "${NugetAPIKey}" \
+    "$DIR_REPO/artifacts/"*.nupkg
