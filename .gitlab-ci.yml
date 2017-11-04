@@ -60,7 +60,7 @@ package:
   dependencies:
     - build
   artifacts:
-    expire_in: 2 weeks
+    expire_in: 2 days
     paths:
       - artifacts/*.nupkg
   only:
