@@ -1,0 +1,19 @@
+slug: xunit-metadata
+description: Strongly-typed attributes for the management and organization of tests.
+project: workbench
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2017
+topics: |-
+  [
+    "testing",
+    "testing-tools",
+    "organization",
+    "strongly-typed",
+    "categories",
+    "categorization"
+  ]
